@@ -1,0 +1,209 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls   s/call   s/call  name    
+ 71.95      9.97     9.97     1305     0.01     0.01  cvSparseMul(CvSparseMat*, CvMat*, CvMat*)
+ 20.48     12.80     2.84 856107006     0.00     0.00  cvGetNextSparseNode
+  5.35     13.54     0.74        1     0.74    13.54  PCGAlgo(CvSparseMat*, CvMat*, CvMat*, CvSparseMat*, int, float, _IplImage*)
+  0.94     13.67     0.13                             frame_dummy
+  0.65     13.76     0.09        1     0.09     0.10  GetLMatrix(CvSparseMat*, _IplImage*)
+  0.47     13.83     0.07   100902     0.00     0.00  GetMiniRGB(unsigned char*)
+  0.14     13.85     0.02        1     0.02     0.02  cvSparseAdd(CvSparseMat*, CvSparseMat*, CvSparseMat*)
+  0.07     13.86     0.01     8927     0.00     0.00  _GLOBAL__sub_I__Z10GetMiniRGBPh
+  0.00     13.86     0.00    49551     0.00     0.00  GetMatFromImgWND(_IplImage*, int, int, int, CvMat*)
+  0.00     13.86     0.00        1     0.00    13.66  SoftMatting(_IplImage*, float**)
+  0.00     13.86     0.00        1     0.00     0.00  Transmission(_IplImage*, unsigned char**, unsigned char, float**)
+  0.00     13.86     0.00        1     0.00     0.07  CalcDarkChannel(_IplImage*, unsigned char**, int*, int*)
+  0.00     13.86     0.00        1     0.00     0.00  RecoverSceneRadiance(_IplImage*, float**, unsigned char, _IplImage*, CvMat*)
+  0.00     13.86     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+ 
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this 
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 2 byte(s) for 0.07% of 13.86 seconds
+
+index % time    self  children    called     name
+                                                 <spontaneous>
+[1]     99.1    0.00   13.73                 main [1]
+                0.00   13.66       1/1           SoftMatting(_IplImage*, float**) [2]
+                0.00    0.07       1/1           CalcDarkChannel(_IplImage*, unsigned char**, int*, int*) [9]
+                0.00    0.00       1/1           Transmission(_IplImage*, unsigned char**, unsigned char, float**) [17]
+                0.00    0.00       1/1           RecoverSceneRadiance(_IplImage*, float**, unsigned char, _IplImage*, CvMat*) [18]
+-----------------------------------------------
+                0.00   13.66       1/1           main [1]
+[2]     98.6    0.00   13.66       1         SoftMatting(_IplImage*, float**) [2]
+                0.74   12.80       1/1           PCGAlgo(CvSparseMat*, CvMat*, CvMat*, CvSparseMat*, int, float, _IplImage*) [3]
+                0.09    0.01       1/1           GetLMatrix(CvSparseMat*, _IplImage*) [7]
+                0.02    0.00       1/1           cvSparseAdd(CvSparseMat*, CvSparseMat*, CvSparseMat*) [10]
+-----------------------------------------------
+                0.74   12.80       1/1           SoftMatting(_IplImage*, float**) [2]
+[3]     97.7    0.74   12.80       1         PCGAlgo(CvSparseMat*, CvMat*, CvMat*, CvSparseMat*, int, float, _IplImage*) [3]
+                9.97    2.83    1305/1305        cvSparseMul(CvSparseMat*, CvMat*, CvMat*) [4]
+-----------------------------------------------
+                9.97    2.83    1305/1305        PCGAlgo(CvSparseMat*, CvMat*, CvMat*, CvSparseMat*, int, float, _IplImage*) [3]
+[4]     92.4    9.97    2.83    1305         cvSparseMul(CvSparseMat*, CvMat*, CvMat*) [4]
+                2.83    0.00 854859255/856107006     cvGetNextSparseNode [5]
+-----------------------------------------------
+                0.00    0.00 1247751/856107006     cvSparseAdd(CvSparseMat*, CvSparseMat*, CvSparseMat*) [10]
+                2.83    0.00 854859255/856107006     cvSparseMul(CvSparseMat*, CvMat*, CvMat*) [4]
+[5]     20.5    2.84    0.00 856107006         cvGetNextSparseNode [5]
+-----------------------------------------------
+                                                 <spontaneous>
+[6]      0.9    0.13    0.00                 frame_dummy [6]
+-----------------------------------------------
+                0.09    0.01       1/1           SoftMatting(_IplImage*, float**) [2]
+[7]      0.7    0.09    0.01       1         GetLMatrix(CvSparseMat*, _IplImage*) [7]
+                0.00    0.01   49551/49551       GetMatFromImgWND(_IplImage*, int, int, int, CvMat*) [12]
+-----------------------------------------------
+                0.07    0.00  100902/100902      CalcDarkChannel(_IplImage*, unsigned char**, int*, int*) [9]
+[8]      0.5    0.07    0.00  100902         GetMiniRGB(unsigned char*) [8]
+-----------------------------------------------
+                0.00    0.07       1/1           main [1]
+[9]      0.5    0.00    0.07       1         CalcDarkChannel(_IplImage*, unsigned char**, int*, int*) [9]
+                0.07    0.00  100902/100902      GetMiniRGB(unsigned char*) [8]
+-----------------------------------------------
+                0.02    0.00       1/1           SoftMatting(_IplImage*, float**) [2]
+[10]     0.2    0.02    0.00       1         cvSparseAdd(CvSparseMat*, CvSparseMat*, CvSparseMat*) [10]
+                0.00    0.00 1247751/856107006     cvGetNextSparseNode [5]
+-----------------------------------------------
+                0.00    0.00       1/8927        __libc_csu_init [13]
+                0.01    0.00    8926/8927        GetMatFromImgWND(_IplImage*, int, int, int, CvMat*) [12]
+[11]     0.1    0.01    0.00    8927         _GLOBAL__sub_I__Z10GetMiniRGBPh [11]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [19]
+-----------------------------------------------
+                0.00    0.01   49551/49551       GetLMatrix(CvSparseMat*, _IplImage*) [7]
+[12]     0.1    0.00    0.01   49551         GetMatFromImgWND(_IplImage*, int, int, int, CvMat*) [12]
+                0.01    0.00    8926/8927        _GLOBAL__sub_I__Z10GetMiniRGBPh [11]
+-----------------------------------------------
+                                                 <spontaneous>
+[13]     0.0    0.00    0.00                 __libc_csu_init [13]
+                0.00    0.00       1/8927        _GLOBAL__sub_I__Z10GetMiniRGBPh [11]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[17]     0.0    0.00    0.00       1         Transmission(_IplImage*, unsigned char**, unsigned char, float**) [17]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[18]     0.0    0.00    0.00       1         RecoverSceneRadiance(_IplImage*, float**, unsigned char, _IplImage*, CvMat*) [18]
+-----------------------------------------------
+                0.00    0.00       1/1           _GLOBAL__sub_I__Z10GetMiniRGBPh [11]
+[19]     0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [19]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+
+Index by function name
+
+  [11] _GLOBAL__sub_I__Z10GetMiniRGBPh [4] cvSparseMul(CvSparseMat*, CvMat*, CvMat*) [19] __static_initialization_and_destruction_0(int, int)
+   [7] GetLMatrix(CvSparseMat*, _IplImage*) [17] Transmission(_IplImage*, unsigned char**, unsigned char, float**) [3] PCGAlgo(CvSparseMat*, CvMat*, CvMat*, CvSparseMat*, int, float, _IplImage*)
+   [8] GetMiniRGB(unsigned char*) [9] CalcDarkChannel(_IplImage*, unsigned char**, int*, int*) [5] cvGetNextSparseNode
+   [2] SoftMatting(_IplImage*, float**) [12] GetMatFromImgWND(_IplImage*, int, int, int, CvMat*) [6] frame_dummy
+  [10] cvSparseAdd(CvSparseMat*, CvSparseMat*, CvSparseMat*) [18] RecoverSceneRadiance(_IplImage*, float**, unsigned char, _IplImage*, CvMat*)

@@ -1,0 +1,8 @@
+image/*
+input/*
+opencvtest/*
+*.jpg
+*.jpeg
+*.png
+*.bmp
+*.mp4
